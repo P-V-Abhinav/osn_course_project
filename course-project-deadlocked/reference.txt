@@ -1,0 +1,42 @@
+TYPE:REQ
+OP:REGISTER_SS
+SS_NAME:ss1
+SS_CLIENT_PORT:6000
+SS_CTRL_PORT:6001
+USER:system
+
+TYPE: “REQ” (request) or “RESP” (response)
+
+OP: operation name (e.g., REGISTER_SS, REGISTER_CLIENT, CREATE, READ…)
+
+Other lines: key-value pairs needed for that operation
+
+Blank line: marks the end of the headers
+
+1. Storage Server → Name Server
+
+TYPE:REQ
+OP:REGISTER_SS
+SS_NAME:ss1
+SS_CLIENT_PORT:6000
+SS_CTRL_PORT:6001
+USER:system
+
+2. Name Server → Storage Server (reply)
+
+TYPE:RESP
+STATUS:OK
+MSG:SS Registered
+
+3. Client → Name Server
+
+TYPE:REQ
+OP:REGISTER_CLIENT
+USER:asritha
+
+4. Name Server → Client
+
+TYPE:RESP
+STATUS:OK
+MSG:Client Registered
+
